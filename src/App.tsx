@@ -8,6 +8,7 @@ import About from './components/About';
 import Ecosystem from './components/Ecosystem';
 import Community from './components/Community';
 import Partners from './components/Partners';
+import Impact from './components/Impact';
 
 function App() {
   return (
@@ -25,12 +26,7 @@ function App() {
 
         <Partners />
 
-        <Section id="impact">
-          <SectionPlaceholder
-            title="BEYOND THE CODE"
-            description="Impact & storytelling docuseries"
-          />
-        </Section>
+        <Impact />
 
         <Section id="join">
           <SectionPlaceholder
