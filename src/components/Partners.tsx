@@ -70,11 +70,13 @@ export default function Partners() {
                 <div className="text-center">
                   <div className="mb-3 flex justify-center">
                     {partner.isLogo ? (
-                      <img
-                        src={partner.logoSrc}
-                        alt={partner.name}
-                        className="w-auto h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                      />
+                      <div className="bg-white dark:bg-white p-3 rounded-lg">
+                        <img
+                          src={partner.logoSrc}
+                          alt={partner.name}
+                          className="w-auto h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                        />
+                      </div>
                     ) : (
                       <Hexagon
                         size={32}
