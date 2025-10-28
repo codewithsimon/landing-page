@@ -1,14 +1,13 @@
 import Layout from './components/Layout';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import Section from './components/Section';
-import SectionPlaceholder from './components/SectionPlaceholder';
 import Hero from './components/Hero';
 import About from './components/About';
 import Ecosystem from './components/Ecosystem';
 import Community from './components/Community';
 import Partners from './components/Partners';
 import Impact from './components/Impact';
+import JoinDao from './components/JoinDao';
 
 function App() {
   return (
@@ -28,12 +27,7 @@ function App() {
 
         <Impact />
 
-        <Section id="join">
-          <SectionPlaceholder
-            title="JOIN THE DAO"
-            description="Onboard and access the BASIX ecosystem"
-          />
-        </Section>
+        <JoinDao />
       </div>
 
       <Footer />
