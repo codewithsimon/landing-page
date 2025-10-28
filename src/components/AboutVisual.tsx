@@ -12,20 +12,22 @@ export default function AboutVisual() {
             cx="200"
             cy="120"
             r="40"
-            stroke="white"
+            stroke="currentColor"
             strokeWidth="1"
             opacity="0.6"
             className="animate-glow-pulse"
+            style={{ color: 'var(--heading)' }}
           />
           <text
             x="200"
             y="125"
             textAnchor="middle"
-            fill="white"
+            fill="currentColor"
             fontSize="12"
             fontFamily="Space Grotesk"
             fontWeight="500"
             opacity="0.8"
+            style={{ color: 'var(--heading)' }}
           >
             AI
           </text>
@@ -36,20 +38,22 @@ export default function AboutVisual() {
             cx="140"
             cy="240"
             r="40"
-            stroke="white"
+            stroke="currentColor"
             strokeWidth="1"
             opacity="0.6"
             className="animate-glow-pulse"
+            style={{ color: 'var(--heading)' }}
           />
           <text
             x="140"
             y="245"
             textAnchor="middle"
-            fill="white"
+            fill="currentColor"
             fontSize="12"
             fontFamily="Space Grotesk"
             fontWeight="500"
             opacity="0.8"
+            style={{ color: 'var(--heading)' }}
           >
             BLOCKCHAIN
           </text>
@@ -60,20 +64,22 @@ export default function AboutVisual() {
             cx="260"
             cy="240"
             r="40"
-            stroke="white"
+            stroke="currentColor"
             strokeWidth="1"
             opacity="0.6"
             className="animate-glow-pulse"
+            style={{ color: 'var(--heading)' }}
           />
           <text
             x="260"
             y="245"
             textAnchor="middle"
-            fill="white"
+            fill="currentColor"
             fontSize="12"
             fontFamily="Space Grotesk"
             fontWeight="500"
             opacity="0.8"
+            style={{ color: 'var(--heading)' }}
           >
             DAO
           </text>
@@ -84,10 +90,11 @@ export default function AboutVisual() {
           y1="160"
           x2="150"
           y2="200"
-          stroke="white"
+          stroke="currentColor"
           strokeWidth="0.5"
           opacity="0.3"
           strokeDasharray="4 4"
+          style={{ color: 'var(--muted)' }}
         >
           <animate
             attributeName="stroke-dashoffset"
@@ -103,10 +110,11 @@ export default function AboutVisual() {
           y1="160"
           x2="250"
           y2="200"
-          stroke="white"
+          stroke="currentColor"
           strokeWidth="0.5"
           opacity="0.3"
           strokeDasharray="4 4"
+          style={{ color: 'var(--muted)' }}
         >
           <animate
             attributeName="stroke-dashoffset"
@@ -122,10 +130,11 @@ export default function AboutVisual() {
           y1="240"
           x2="220"
           y2="240"
-          stroke="white"
+          stroke="currentColor"
           strokeWidth="0.5"
           opacity="0.3"
           strokeDasharray="4 4"
+          style={{ color: 'var(--muted)' }}
         >
           <animate
             attributeName="stroke-dashoffset"
@@ -140,8 +149,9 @@ export default function AboutVisual() {
           cx="200"
           cy="180"
           r="4"
-          fill="white"
+          fill="currentColor"
           opacity="0.8"
+          style={{ color: 'var(--heading)' }}
         >
           <animate
             attributeName="opacity"
@@ -155,10 +165,11 @@ export default function AboutVisual() {
           cx="200"
           cy="180"
           r="60"
-          stroke="white"
+          stroke="currentColor"
           strokeWidth="0.5"
           opacity="0.1"
           fill="none"
+          style={{ color: 'var(--heading)' }}
         >
           <animate
             attributeName="r"
@@ -175,7 +186,10 @@ export default function AboutVisual() {
         </circle>
       </svg>
 
-      <div className="absolute inset-0 bg-gradient-radial from-transparent to-basix-black/50 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: `radial-gradient(circle, transparent, var(--bg))`,
+        opacity: 0.5
+      }} />
     </div>
   );
 }
