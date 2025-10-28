@@ -30,6 +30,10 @@ export default function AnimatedBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      const isDark = document.documentElement.classList.contains('dark');
+      const nodeColor = isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)';
+      const lineColorBase = isDark ? '255, 255, 255' : '0, 0, 0';
+
       nodes.forEach((node) => {
         node.x += node.vx;
         node.y += node.vy;
@@ -39,7 +43,7 @@ export default function AnimatedBackground() {
 
         ctx.beginPath();
         ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.fillStyle = nodeColor;
         ctx.fill();
       });
 
@@ -53,7 +57,7 @@ export default function AnimatedBackground() {
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(${lineColorBase}, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
