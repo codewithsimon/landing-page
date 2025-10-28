@@ -9,7 +9,7 @@ const partners = [
   { name: 'Filecoin', position: 'middle-center', isLogo: true, logoSrc: '/image copy copy copy.png' },
   { name: 'DeepFunding', position: 'middle-right', isLogo: true, logoSrc: '/image copy copy.png' },
   { name: 'Cudos', position: 'bottom-left', isLogo: true, logoSrc: '/image (8).png' },
-  { name: 'Incantio', position: 'bottom-right' },
+  { name: 'Incantio', position: 'bottom-right', isLogo: true, logoSrc: '/image copy copy copy copy.png' },
 ];
 
 const technologies = [
