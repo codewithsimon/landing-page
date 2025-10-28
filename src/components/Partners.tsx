@@ -2,9 +2,9 @@ import { Hexagon } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const partners = [
-  { name: 'Cardano', position: 'top-left', isLogo: true },
+  { name: 'Cardano', position: 'top-left', isLogo: true, logoSrc: '/image.png' },
   { name: 'SingularityNET', position: 'top-center' },
-  { name: 'ASI', position: 'top-right' },
+  { name: 'ASI', position: 'top-right', isLogo: true, logoSrc: '/1724863913-asi-featured-removebg-preview.png' },
   { name: 'Fetch.ai', position: 'middle-left' },
   { name: 'Filecoin', position: 'middle-center' },
   { name: 'DeepFunding', position: 'middle-right' },
@@ -71,7 +71,7 @@ export default function Partners() {
                   <div className="mb-3 flex justify-center">
                     {partner.isLogo ? (
                       <img
-                        src="/image.png"
+                        src={partner.logoSrc}
                         alt={partner.name}
                         className="w-auto h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                       />
