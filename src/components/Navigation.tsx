@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
+import { useTheme } from '../context/ThemeContext';
 
 const navItems = [
   { label: 'ABOUT', href: '#about' },
@@ -12,6 +13,7 @@ const navItems = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <nav
@@ -23,12 +25,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div
-            className="text-2xl font-bold tracking-tighter"
-            style={{ color: 'var(--heading)' }}
-          >
-            BASIX<span style={{ color: 'var(--muted)' }}>.</span>
-          </div>
+          <a href="#" className="flex items-center">
+            <img
+              src={theme === 'dark' ? '/2407_Basix-Logo_WHT.png' : '/2407_Basix-Logo_BLK.png'}
+              alt="BASIX"
+              className="h-8 w-auto"
+            />
+          </a>
 
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (

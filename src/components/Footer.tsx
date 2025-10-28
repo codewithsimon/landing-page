@@ -1,6 +1,9 @@
 import { Github, Twitter, MessageCircle } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   return (
     <footer
       className="border-t"
@@ -12,12 +15,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div
-              className="text-2xl font-bold tracking-tighter mb-4"
-              style={{ color: 'var(--heading)' }}
-            >
-              BASIX<span style={{ color: 'var(--muted)' }}>.</span>
-            </div>
+            <img
+              src={theme === 'dark' ? '/2407_Basix-Logo_WHT.png' : '/2407_Basix-Logo_BLK.png'}
+              alt="BASIX"
+              className="h-8 w-auto mb-4"
+            />
             <p
               className="text-sm leading-relaxed max-w-md"
               style={{ color: 'var(--muted)' }}
