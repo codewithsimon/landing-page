@@ -1,4 +1,5 @@
 import { Leaf, Users, Heart, Globe, Play, Sparkles } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const impactAreas = [
   {
@@ -24,9 +25,11 @@ const impactAreas = [
 ];
 
 export default function Impact() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="impact" className="section-container">
-      <div className="text-center mb-16">
+    <section id="impact" className="section-container" ref={ref as React.RefObject<HTMLElement>}>
+      <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
           IMPACT BEYOND CODE
         </h2>
@@ -36,7 +39,7 @@ export default function Impact() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-        <div className="space-y-6">
+        <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-basix-700 rounded-full text-sm font-mono text-basix-400 uppercase tracking-wider">
               <Sparkles size={16} />
@@ -50,16 +53,16 @@ export default function Impact() {
               return (
                 <div
                   key={index}
-                  className="flex gap-4 p-5 border border-basix-800 rounded-lg hover:border-basix-600 transition-all duration-300 group"
+                  className="flex gap-4 p-5 border border-basix-800 rounded-lg hover:border-basix-600 transition-smooth group hover-lift"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 border border-basix-700 rounded-lg flex items-center justify-center group-hover:border-basix-500 group-hover:shadow-glow transition-all duration-300">
-                      <Icon size={20} className="text-basix-500 group-hover:text-basix-white transition-colors duration-300" />
+                    <div className="w-12 h-12 border border-basix-700 rounded-lg flex items-center justify-center group-hover:border-basix-500 group-hover:shadow-glow transition-all duration-500">
+                      <Icon size={20} className="text-basix-500 group-hover:text-basix-white transition-colors duration-500" />
                     </div>
                   </div>
 
                   <div className="flex-grow">
-                    <h3 className="text-base font-semibold mb-1 group-hover:text-basix-white transition-colors duration-300">
+                    <h3 className="text-base font-semibold mb-1 group-hover:text-basix-white transition-colors duration-500">
                       {area.title}
                     </h3>
                     <p className="text-sm text-basix-500 font-light leading-relaxed">
@@ -86,7 +89,7 @@ export default function Impact() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '0.2s' }}>
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-basix-700 rounded-full text-sm font-mono text-basix-400 uppercase tracking-wider">
               <Play size={16} />
@@ -95,11 +98,11 @@ export default function Impact() {
           </div>
 
           <div className="relative group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-basix-900 to-basix-black border border-basix-700 rounded-lg overflow-hidden group-hover:border-basix-500 transition-all duration-300">
+            <div className="aspect-video bg-gradient-to-br from-basix-900 to-basix-black border border-basix-700 rounded-lg overflow-hidden group-hover:border-basix-500 transition-smooth hover-lift">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-basix-white opacity-10 rounded-full blur-xl animate-glow-pulse" />
-                  <div className="relative w-20 h-20 border-2 border-basix-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative w-20 h-20 border-2 border-basix-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                     <Play size={32} className="text-basix-white ml-1" fill="currentColor" />
                   </div>
                 </div>

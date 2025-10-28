@@ -1,10 +1,13 @@
 import AboutVisual from './AboutVisual';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function About() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="section-container" ref={ref as React.RefObject<HTMLElement>}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-6">
+        <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
           <div className="space-y-2">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">
               ABOUT BASIX
@@ -32,7 +35,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="order-first lg:order-last">
+        <div className={`order-first lg:order-last transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '0.2s' }}>
           <AboutVisual />
         </div>
       </div>

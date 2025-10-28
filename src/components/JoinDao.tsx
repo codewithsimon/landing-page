@@ -1,4 +1,5 @@
 import { ArrowRight, Users, Palette, TrendingUp, Mail } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const actions = [
   {
@@ -22,14 +23,16 @@ const actions = [
 ];
 
 export default function JoinDao() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="join" className="section-container relative overflow-hidden">
+    <section id="join" className="section-container relative overflow-hidden" ref={ref as React.RefObject<HTMLElement>}>
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute inset-0 grid-background" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-basix-900 border border-basix-700 rounded-full text-xs font-mono text-basix-400 uppercase tracking-wider">
               <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" />
@@ -54,15 +57,19 @@ export default function JoinDao() {
             return (
               <button
                 key={index}
-                className={`group relative p-6 border rounded-lg transition-all duration-300 text-left ${
+                className={`group relative p-6 border rounded-lg transition-smooth hover-lift text-left ${
                   action.primary
-                    ? 'bg-basix-white text-basix-black border-basix-white hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]'
+                    ? 'bg-basix-white text-basix-black border-basix-white hover:shadow-glow-lg'
                     : 'bg-basix-black text-basix-white border-basix-700 hover:border-basix-white hover:shadow-glow'
-                }`}
+                } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{
+                  transitionDelay: `${0.3 + index * 0.1}s`,
+                  transitionDuration: '0.6s'
+                }}
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                    className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-500 ${
                       action.primary
                         ? 'bg-basix-black text-basix-white'
                         : 'bg-basix-900 border border-basix-700 text-basix-400 group-hover:border-basix-white group-hover:text-basix-white'
@@ -72,7 +79,7 @@ export default function JoinDao() {
                   </div>
                   <ArrowRight
                     size={20}
-                    className={`transition-transform duration-300 group-hover:translate-x-1 ${
+                    className={`transition-transform duration-500 group-hover:translate-x-1 ${
                       action.primary ? 'text-basix-black' : 'text-basix-600 group-hover:text-basix-white'
                     }`}
                   />
@@ -91,7 +98,7 @@ export default function JoinDao() {
                 </p>
 
                 {action.primary && (
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-basix-white via-basix-200 to-basix-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl" />
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-basix-white via-basix-200 to-basix-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
                 )}
               </button>
             );

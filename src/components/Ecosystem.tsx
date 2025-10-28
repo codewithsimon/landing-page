@@ -1,5 +1,6 @@
 import { Store, Users, Brain, Hexagon, GraduationCap, Leaf } from 'lucide-react';
 import Card from './Card';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const modules = [
   {
@@ -35,9 +36,11 @@ const modules = [
 ];
 
 export default function Ecosystem() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="ecosystem" className="section-container">
-      <div className="text-center mb-16">
+    <section id="ecosystem" className="section-container" ref={ref as React.RefObject<HTMLElement>}>
+      <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
           ECOSYSTEM MODULES
         </h2>
@@ -50,11 +53,18 @@ export default function Ecosystem() {
         {modules.map((module, index) => {
           const Icon = module.icon;
           return (
-            <Card key={index} className="group">
+            <Card
+              key={index}
+              className={`group transition-smooth hover-scale ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{
+                transitionDelay: `${index * 0.1}s`,
+                transitionDuration: '0.7s'
+              }}
+            >
               <div className="flex flex-col h-full">
                 <div className="mb-6">
-                  <div className="w-12 h-12 border border-basix-600 rounded-lg flex items-center justify-center group-hover:border-basix-400 transition-colors duration-300">
-                    <Icon size={24} className="text-basix-400 group-hover:text-basix-white transition-colors duration-300" />
+                  <div className="w-12 h-12 border border-basix-600 rounded-lg flex items-center justify-center group-hover:border-basix-400 group-hover:shadow-glow transition-all duration-500">
+                    <Icon size={24} className="text-basix-400 group-hover:text-basix-white transition-colors duration-500 animate-float-slow" style={{ animationDelay: `${index * 0.3}s` }} />
                   </div>
                 </div>
 
@@ -66,7 +76,7 @@ export default function Ecosystem() {
                   {module.description}
                 </p>
 
-                <div className="mt-6 pt-4 border-t border-basix-800 group-hover:border-basix-600 transition-colors duration-300">
+                <div className="mt-6 pt-4 border-t border-basix-800 group-hover:border-basix-600 transition-colors duration-500">
                   <div className="text-xs text-basix-500 uppercase tracking-wider font-medium">
                     Learn More →
                   </div>

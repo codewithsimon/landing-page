@@ -1,5 +1,6 @@
 import { Code, TrendingUp, Palette, Briefcase } from 'lucide-react';
 import Card from './Card';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const personas = [
   {
@@ -25,8 +26,10 @@ const personas = [
 ];
 
 export default function Community() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="community" className="section-container relative">
+    <section id="community" className="section-container relative" ref={ref as React.RefObject<HTMLElement>}>
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -45,7 +48,7 @@ export default function Community() {
       </div>
 
       <div className="relative z-10">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
             THE DICE NETWORK
           </h2>
@@ -58,11 +61,18 @@ export default function Community() {
           {personas.map((persona, index) => {
             const Icon = persona.icon;
             return (
-              <Card key={index} className="group relative">
+              <Card
+                key={index}
+                className={`group relative transition-smooth hover-scale ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{
+                  transitionDelay: `${index * 0.1}s`,
+                  transitionDuration: '0.7s'
+                }}
+              >
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="mb-6">
-                    <div className="w-16 h-16 border-2 border-basix-600 rounded-full flex items-center justify-center group-hover:border-basix-400 group-hover:shadow-glow transition-all duration-300">
-                      <Icon size={28} className="text-basix-400 group-hover:text-basix-white transition-colors duration-300" />
+                    <div className="w-16 h-16 border-2 border-basix-600 rounded-full flex items-center justify-center group-hover:border-basix-400 group-hover:shadow-glow transition-all duration-500">
+                      <Icon size={28} className="text-basix-400 group-hover:text-basix-white transition-colors duration-500 animate-float-slow" style={{ animationDelay: `${index * 0.5}s` }} />
                     </div>
                   </div>
 

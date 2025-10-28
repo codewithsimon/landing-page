@@ -1,4 +1,5 @@
 import { Hexagon } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const partners = [
   { name: 'Cardano', position: 'top-left' },
@@ -18,8 +19,10 @@ const technologies = [
 ];
 
 export default function Partners() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="partners" className="section-container relative overflow-hidden">
+    <section id="partners" className="section-container relative overflow-hidden" ref={ref as React.RefObject<HTMLElement>}>
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
         <div className="relative w-[600px] h-[600px]">
           {[...Array(3)].map((_, i) => (
@@ -36,7 +39,7 @@ export default function Partners() {
       </div>
 
       <div className="relative z-10">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
             POWERED BY A DECENTRALIZED STACK
           </h2>
@@ -50,16 +53,21 @@ export default function Partners() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="group flex items-center justify-center p-6 border border-basix-800 rounded-lg hover:border-basix-600 transition-all duration-300 hover:shadow-glow"
+                className={`group flex items-center justify-center p-6 border border-basix-800 rounded-lg hover:border-basix-600 transition-smooth hover:shadow-glow hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{
+                  transitionDelay: `${index * 0.08}s`,
+                  transitionDuration: '0.6s'
+                }}
               >
                 <div className="text-center">
                   <div className="mb-3 flex justify-center">
                     <Hexagon
                       size={32}
-                      className="text-basix-600 group-hover:text-basix-400 transition-colors duration-300"
+                      className="text-basix-600 group-hover:text-basix-400 transition-colors duration-500 animate-float-slow"
+                      style={{ animationDelay: `${index * 0.4}s` }}
                     />
                   </div>
-                  <div className="text-sm font-medium text-basix-400 group-hover:text-basix-white transition-colors duration-300 uppercase tracking-wide">
+                  <div className="text-sm font-medium text-basix-400 group-hover:text-basix-white transition-colors duration-500 uppercase tracking-wide">
                     {partner.name}
                   </div>
                 </div>
