@@ -3,7 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const partners = [
   { name: 'Cardano', position: 'top-left', isLogo: true, logoSrc: '/image.png' },
-  { name: 'SingularityNET', position: 'top-center' },
+  { name: 'SingularityNET', position: 'top-center', isLogo: true, logoSrc: '/SingularityNET.png' },
   { name: 'ASI', position: 'top-right', isLogo: true, logoSrc: '/1724863913-asi-featured-removebg-preview.png' },
   { name: 'Fetch.ai', position: 'middle-left', isLogo: true, logoSrc: '/image copy.png' },
   { name: 'Filecoin', position: 'middle-center' },
