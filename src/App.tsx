@@ -6,6 +6,7 @@ import SectionPlaceholder from './components/SectionPlaceholder';
 import Hero from './components/Hero';
 import About from './components/About';
 import Ecosystem from './components/Ecosystem';
+import Community from './components/Community';
 
 function App() {
   return (
@@ -19,12 +20,7 @@ function App() {
 
         <Ecosystem />
 
-        <Section id="community">
-          <SectionPlaceholder
-            title="DICE COMMUNITY"
-            description="For Developers, Investors, Creators, and Entrepreneurs"
-          />
-        </Section>
+        <Community />
 
         <Section id="partners">
           <SectionPlaceholder
