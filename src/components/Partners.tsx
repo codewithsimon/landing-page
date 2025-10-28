@@ -5,7 +5,7 @@ const partners = [
   { name: 'Cardano', position: 'top-left', isLogo: true, logoSrc: '/image.png' },
   { name: 'SingularityNET', position: 'top-center' },
   { name: 'ASI', position: 'top-right', isLogo: true, logoSrc: '/1724863913-asi-featured-removebg-preview.png' },
-  { name: 'Fetch.ai', position: 'middle-left' },
+  { name: 'Fetch.ai', position: 'middle-left', isLogo: true, logoSrc: '/image copy.png' },
   { name: 'Filecoin', position: 'middle-center' },
   { name: 'DeepFunding', position: 'middle-right' },
   { name: 'Cudos', position: 'bottom-left', isLogo: true, logoSrc: '/image (8).png' },
