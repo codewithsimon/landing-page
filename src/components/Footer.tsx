@@ -18,7 +18,7 @@ export default function Footer() {
             <img
               src={theme === 'dark' ? '/2407_Basix-Logo_WHT.png' : '/2407_Basix-Logo_BLK.png'}
               alt="BASIX"
-              className="h-8 w-auto mb-4"
+              className="h-12 w-auto mb-4"
             />
             <p
               className="text-sm leading-relaxed max-w-md"

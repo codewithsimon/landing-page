@@ -29,7 +29,7 @@ export default function Navigation() {
             <img
               src={theme === 'dark' ? '/2407_Basix-Logo_WHT.png' : '/2407_Basix-Logo_BLK.png'}
               alt="BASIX"
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </a>
 
