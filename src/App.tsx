@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Section from './components/Section';
 import SectionPlaceholder from './components/SectionPlaceholder';
 import Hero from './components/Hero';
+import About from './components/About';
 
 function App() {
   return (
@@ -13,12 +14,7 @@ function App() {
       <Hero />
 
       <div>
-        <Section id="about">
-          <SectionPlaceholder
-            title="ABOUT BASIX"
-            description="Mission & vision of the Beneficial Artificial Super Intelligence X Market"
-          />
-        </Section>
+        <About />
 
         <Section id="ecosystem">
           <SectionPlaceholder
