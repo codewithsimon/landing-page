@@ -41,10 +41,10 @@ export default function Ecosystem() {
   return (
     <section id="ecosystem" className="section-container" ref={ref as React.RefObject<HTMLElement>}>
       <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4" style={{ color: 'var(--heading)' }}>
           ECOSYSTEM MODULES
         </h2>
-        <p className="text-lg text-basix-400 font-light max-w-2xl mx-auto">
+        <p className="text-lg font-light max-w-2xl mx-auto" style={{ color: 'var(--muted)' }}>
           A complete infrastructure for decentralized innovation, governance, and impact.
         </p>
       </div>
@@ -63,21 +63,21 @@ export default function Ecosystem() {
             >
               <div className="flex flex-col h-full">
                 <div className="mb-6">
-                  <div className="w-12 h-12 border border-basix-600 rounded-lg flex items-center justify-center group-hover:border-basix-400 group-hover:shadow-glow transition-all duration-500">
-                    <Icon size={24} className="text-basix-400 group-hover:text-basix-white transition-colors duration-500 animate-float-slow" style={{ animationDelay: `${index * 0.3}s` }} />
+                  <div className="w-12 h-12 border rounded-lg flex items-center justify-center transition-all duration-500" style={{ borderColor: 'var(--border)' }}>
+                    <Icon size={24} className="transition-colors duration-500 animate-float-slow" style={{ color: 'var(--muted)', animationDelay: `${index * 0.3}s` }} />
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold uppercase tracking-tight mb-3">
+                <h3 className="text-xl font-semibold uppercase tracking-tight mb-3" style={{ color: 'var(--heading)' }}>
                   {module.title}
                 </h3>
 
-                <p className="text-basix-400 text-sm leading-relaxed font-light flex-grow">
+                <p className="text-sm leading-relaxed font-light flex-grow" style={{ color: 'var(--muted)' }}>
                   {module.description}
                 </p>
 
-                <div className="mt-6 pt-4 border-t border-basix-800 group-hover:border-basix-600 transition-colors duration-500">
-                  <div className="text-xs text-basix-500 uppercase tracking-wider font-medium">
+                <div className="mt-6 pt-4 border-t transition-colors duration-500" style={{ borderColor: 'var(--border)' }}>
+                  <div className="text-xs uppercase tracking-wider font-medium" style={{ color: 'var(--muted)' }}>
                     Learn More →
                   </div>
                 </div>
@@ -88,8 +88,8 @@ export default function Ecosystem() {
       </div>
 
       <div className="mt-16 text-center">
-        <div className="inline-flex items-center gap-2 px-6 py-3 border border-basix-700 rounded-lg text-sm font-mono text-basix-400">
-          <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-6 py-3 border rounded-lg text-sm font-mono" style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}>
+          <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--muted)' }} />
           All modules interoperate seamlessly
         </div>
       </div>

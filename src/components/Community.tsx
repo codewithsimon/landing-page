@@ -37,9 +37,10 @@ export default function Community() {
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
-                stroke="white"
+                stroke="currentColor"
                 strokeWidth="0.5"
                 opacity="0.1"
+                style={{ color: 'var(--heading)' }}
               />
             </pattern>
           </defs>
@@ -49,10 +50,10 @@ export default function Community() {
 
       <div className="relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4" style={{ color: 'var(--heading)' }}>
             THE DICE NETWORK
           </h2>
-          <p className="text-lg text-basix-400 font-light max-w-2xl mx-auto">
+          <p className="text-lg font-light max-w-2xl mx-auto" style={{ color: 'var(--muted)' }}>
             Empowering creators, developers, investors, and entrepreneurs to co-own the digital future.
           </p>
         </div>
@@ -71,23 +72,26 @@ export default function Community() {
               >
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="mb-6">
-                    <div className="w-16 h-16 border-2 border-basix-600 rounded-full flex items-center justify-center group-hover:border-basix-400 group-hover:shadow-glow transition-all duration-500">
-                      <Icon size={28} className="text-basix-400 group-hover:text-basix-white transition-colors duration-500 animate-float-slow" style={{ animationDelay: `${index * 0.5}s` }} />
+                    <div
+                      className="w-16 h-16 border-2 rounded-full flex items-center justify-center transition-all duration-500"
+                      style={{ borderColor: 'var(--border)' }}
+                    >
+                      <Icon size={28} className="transition-colors duration-500 animate-float-slow" style={{ color: 'var(--muted)', animationDelay: `${index * 0.5}s` }} />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold uppercase tracking-tight mb-4">
+                  <h3 className="text-xl font-semibold uppercase tracking-tight mb-4" style={{ color: 'var(--heading)' }}>
                     {persona.title}
                   </h3>
 
-                  <p className="text-basix-400 text-sm leading-relaxed font-light flex-grow">
+                  <p className="text-sm leading-relaxed font-light flex-grow" style={{ color: 'var(--muted)' }}>
                     {persona.description}
                   </p>
                 </div>
 
                 {index < personas.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px">
-                    <div className="w-full h-full bg-gradient-to-r from-basix-600 via-basix-500 to-transparent opacity-50" />
+                    <div className="w-full h-full opacity-50" style={{ background: 'linear-gradient(to right, var(--border), transparent)' }} />
                   </div>
                 )}
               </Card>
@@ -97,13 +101,13 @@ export default function Community() {
 
         <div className="text-center">
           <div className="inline-block">
-            <div className="px-8 py-4 border border-basix-700 rounded-lg">
-              <div className="flex items-center gap-3 text-sm font-mono text-basix-300">
+            <div className="px-8 py-4 border rounded-lg" style={{ borderColor: 'var(--border)' }}>
+              <div className="flex items-center gap-3 text-sm font-mono" style={{ color: 'var(--text)' }}>
                 <div className="flex gap-1">
-                  <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" />
-                  <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" style={{ animationDelay: '0.2s' }} />
-                  <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" style={{ animationDelay: '0.4s' }} />
-                  <div className="w-2 h-2 rounded-full bg-basix-500 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                  <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--muted)' }} />
+                  <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--muted)', animationDelay: '0.2s' }} />
+                  <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--muted)', animationDelay: '0.4s' }} />
+                  <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--muted)', animationDelay: '0.6s' }} />
                 </div>
                 <span className="uppercase tracking-wider">
                   United by Decentralization

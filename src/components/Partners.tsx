@@ -28,8 +28,9 @@ export default function Partners() {
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className="absolute inset-0 border border-basix-white rounded-full animate-orbit-pulse"
+              className="absolute inset-0 border rounded-full animate-orbit-pulse"
               style={{
+                borderColor: 'var(--heading)',
                 animationDelay: `${i * 0.8}s`,
                 transform: `scale(${0.4 + i * 0.3})`,
               }}
@@ -40,10 +41,10 @@ export default function Partners() {
 
       <div className="relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase mb-4" style={{ color: 'var(--heading)' }}>
             POWERED BY A DECENTRALIZED STACK
           </h2>
-          <p className="text-lg text-basix-400 font-light max-w-3xl mx-auto">
+          <p className="text-lg font-light max-w-3xl mx-auto" style={{ color: 'var(--muted)' }}>
             Built on MeTTa Language, KRNL smart contracts, and partnered with leaders in AI and blockchain.
           </p>
         </div>
@@ -53,21 +54,28 @@ export default function Partners() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className={`group flex items-center justify-center p-6 border border-basix-800 rounded-lg hover:border-basix-600 transition-smooth hover:shadow-glow hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group flex items-center justify-center p-6 border rounded-lg transition-smooth hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{
+                  borderColor: 'var(--border)',
                   transitionDelay: `${index * 0.08}s`,
                   transitionDuration: '0.6s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-glow)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <div className="text-center">
                   <div className="mb-3 flex justify-center">
                     <Hexagon
                       size={32}
-                      className="text-basix-600 group-hover:text-basix-400 transition-colors duration-500 animate-float-slow"
-                      style={{ animationDelay: `${index * 0.4}s` }}
+                      className="transition-colors duration-500 animate-float-slow"
+                      style={{ color: 'var(--muted)', animationDelay: `${index * 0.4}s` }}
                     />
                   </div>
-                  <div className="text-sm font-medium text-basix-400 group-hover:text-basix-white transition-colors duration-500 uppercase tracking-wide">
+                  <div className="text-sm font-medium uppercase tracking-wide" style={{ color: 'var(--muted)' }}>
                     {partner.name}
                   </div>
                 </div>
@@ -76,9 +84,9 @@ export default function Partners() {
           </div>
         </div>
 
-        <div className="border-t border-basix-800 pt-12">
+        <div className="border-t pt-12" style={{ borderColor: 'var(--border)' }}>
           <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold uppercase tracking-tight text-basix-300">
+            <h3 className="text-xl font-semibold uppercase tracking-tight" style={{ color: 'var(--text)' }}>
               Core Technologies
             </h3>
           </div>
@@ -87,35 +95,43 @@ export default function Partners() {
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="relative p-6 border border-basix-800 rounded-lg group hover:border-basix-600 transition-all duration-300"
+                className="relative p-6 border rounded-lg group transition-all duration-300"
+                style={{ borderColor: 'var(--border)', backgroundColor: 'var(--surface)' }}
               >
-                <div className="absolute top-0 left-6 -mt-3 px-3 py-1 bg-basix-black border border-basix-700 rounded text-xs text-basix-500 uppercase tracking-wider">
+                <div
+                  className="absolute top-0 left-6 -mt-3 px-3 py-1 border rounded text-xs uppercase tracking-wider"
+                  style={{
+                    backgroundColor: 'var(--bg)',
+                    borderColor: 'var(--border)',
+                    color: 'var(--muted)'
+                  }}
+                >
                   {String(index + 1).padStart(2, '0')}
                 </div>
 
                 <div className="text-center pt-2">
-                  <h4 className="text-base font-semibold mb-2 group-hover:text-basix-white transition-colors duration-300">
+                  <h4 className="text-base font-semibold mb-2 transition-colors duration-300" style={{ color: 'var(--heading)' }}>
                     {tech.name}
                   </h4>
-                  <p className="text-sm text-basix-500 font-light">
+                  <p className="text-sm font-light" style={{ color: 'var(--muted)' }}>
                     {tech.description}
                   </p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-basix-700 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 w-full h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to right, transparent, var(--border), transparent)' }} />
               </div>
             ))}
           </div>
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 border border-basix-700 rounded-lg text-sm font-mono text-basix-400">
+          <div className="inline-flex items-center gap-3 px-6 py-3 border rounded-lg text-sm font-mono" style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}>
             <div className="flex gap-1">
               {[...Array(8)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-1 h-4 bg-basix-600 rounded-full animate-pulse"
-                  style={{ animationDelay: `${i * 0.1}s` }}
+                  className="w-1 h-4 rounded-full animate-pulse"
+                  style={{ backgroundColor: 'var(--muted)', animationDelay: `${i * 0.1}s` }}
                 />
               ))}
             </div>
