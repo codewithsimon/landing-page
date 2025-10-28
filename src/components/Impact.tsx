@@ -108,48 +108,20 @@ export default function Impact() {
             </div>
           </div>
 
-          <div className="relative group cursor-pointer">
+          <div className="relative group">
             <div
               className="aspect-video border rounded-lg overflow-hidden transition-smooth hover-lift"
               style={{
-                background: 'linear-gradient(to bottom right, var(--elevated), var(--surface))',
                 borderColor: 'var(--border)'
               }}
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 opacity-10 rounded-full blur-xl animate-glow-pulse" style={{ backgroundColor: 'var(--heading)' }} />
-                  <div
-                    className="relative w-20 h-20 border-2 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-                    style={{ borderColor: 'var(--heading)', color: 'var(--heading)' }}
-                  >
-                    <Play size={32} className="ml-1" fill="currentColor" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, var(--bg), transparent, transparent)' }} />
-
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="px-2 py-1 border rounded text-xs uppercase tracking-wider"
-                    style={{
-                      backgroundColor: 'var(--surface)',
-                      borderColor: 'var(--border)',
-                      color: 'var(--muted)'
-                    }}
-                  >
-                    Coming Soon
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--heading)' }}>
-                  Stories of Innovation & Impact
-                </h3>
-                <p className="text-sm font-light" style={{ color: 'var(--muted)' }}>
-                  A docuseries exploring the creators, builders, and visionaries transforming the digital landscape.
-                </p>
-              </div>
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/nh6GS0hPwLA"
+                title="BeyondTheCode Series"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
 
             <div className="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10 blur" style={{ background: 'linear-gradient(to right, var(--border), var(--muted), var(--border))' }} />
