@@ -73,7 +73,7 @@ export default function Partners() {
                       <img
                         src={partner.logoSrc}
                         alt={partner.name}
-                        className="w-auto h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                        className="w-auto h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                       />
                     ) : (
                       <Hexagon
