@@ -6,7 +6,7 @@ const partners = [
   { name: 'SingularityNET', position: 'top-center', isLogo: true, logoSrc: '/SingularityNET.png' },
   { name: 'ASI', position: 'top-right', isLogo: true, logoSrc: '/1724863913-asi-featured-removebg-preview.png' },
   { name: 'Fetch.ai', position: 'middle-left', isLogo: true, logoSrc: '/image copy.png' },
-  { name: 'Filecoin', position: 'middle-center' },
+  { name: 'Filecoin', position: 'middle-center', isLogo: true, logoSrc: '/image copy copy copy.png' },
   { name: 'DeepFunding', position: 'middle-right', isLogo: true, logoSrc: '/image copy copy.png' },
   { name: 'Cudos', position: 'bottom-left', isLogo: true, logoSrc: '/image (8).png' },
   { name: 'Incantio', position: 'bottom-right' },
