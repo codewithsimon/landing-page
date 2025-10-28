@@ -5,6 +5,7 @@ import Section from './components/Section';
 import SectionPlaceholder from './components/SectionPlaceholder';
 import Hero from './components/Hero';
 import About from './components/About';
+import Ecosystem from './components/Ecosystem';
 
 function App() {
   return (
@@ -16,12 +17,7 @@ function App() {
       <div>
         <About />
 
-        <Section id="ecosystem">
-          <SectionPlaceholder
-            title="ECOSYSTEM MODULES"
-            description="Decentralized marketplace, DAO governance, AI/AGI tools, NFT tokenization, Academy, ESG"
-          />
-        </Section>
+        <Ecosystem />
 
         <Section id="community">
           <SectionPlaceholder
