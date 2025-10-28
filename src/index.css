@@ -12,10 +12,23 @@
   body {
     @apply bg-basix-black text-basix-white antialiased;
     font-family: 'Space Grotesk', system-ui, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  html.light body {
+    @apply bg-basix-white text-basix-black;
+  }
+
+  html.light * {
+    border-color: #e5e5e5;
+  }
+
+  html.dark body {
+    @apply bg-basix-black text-basix-white;
   }
 }
 
@@ -31,6 +44,12 @@
     background-size: 80px 80px;
   }
 
+  html.light .grid-background {
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  }
+
   .glow-border {
     @apply border border-basix-600 transition-all duration-300;
   }
@@ -43,20 +62,40 @@
     @apply bg-gradient-to-r from-basix-white via-basix-200 to-basix-400 bg-clip-text text-transparent;
   }
 
+  html.light .text-gradient {
+    @apply bg-gradient-to-r from-basix-black via-basix-800 to-basix-600 bg-clip-text text-transparent;
+  }
+
   .card-base {
     @apply bg-basix-900/50 backdrop-blur-sm border border-basix-700 rounded-lg p-6 transition-all duration-300;
+  }
+
+  html.light .card-base {
+    @apply bg-basix-100/50 border-basix-200;
   }
 
   .card-base:hover {
     @apply border-basix-500 shadow-[0_0_30px_rgba(255,255,255,0.05)];
   }
 
+  html.light .card-base:hover {
+    @apply border-basix-400 shadow-[0_0_30px_rgba(0,0,0,0.05)];
+  }
+
   .btn-primary {
     @apply px-6 py-3 bg-basix-white text-basix-black font-medium uppercase tracking-wider transition-all duration-300 hover:bg-basix-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)];
   }
 
+  html.light .btn-primary {
+    @apply bg-basix-black text-basix-white hover:bg-basix-800;
+  }
+
   .btn-secondary {
     @apply px-6 py-3 border border-basix-white text-basix-white font-medium uppercase tracking-wider transition-all duration-300 hover:bg-basix-white hover:text-basix-black;
+  }
+
+  html.light .btn-secondary {
+    @apply border-basix-black text-basix-black hover:bg-basix-black hover:text-basix-white;
   }
 }
 
