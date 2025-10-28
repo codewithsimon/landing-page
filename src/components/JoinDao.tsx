@@ -110,7 +110,7 @@ export default function JoinDao() {
                 }}
               >
                 <Mail size={20} className="group-hover:scale-110 transition-transform duration-300" />
-                <span>invest@basix.market</span>
+                <span>invest@basixmarket.io</span>
               </a>
             </div>
 
