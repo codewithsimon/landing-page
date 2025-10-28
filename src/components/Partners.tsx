@@ -8,7 +8,7 @@ const partners = [
   { name: 'Fetch.ai', position: 'middle-left' },
   { name: 'Filecoin', position: 'middle-center' },
   { name: 'DeepFunding', position: 'middle-right' },
-  { name: 'Cudos', position: 'bottom-left' },
+  { name: 'Cudos', position: 'bottom-left', isLogo: true, logoSrc: '/image (8).png' },
   { name: 'Incantio', position: 'bottom-right' },
 ];
 
