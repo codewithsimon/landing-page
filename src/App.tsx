@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Ecosystem from './components/Ecosystem';
 import Community from './components/Community';
+import Partners from './components/Partners';
 
 function App() {
   return (
@@ -22,12 +23,7 @@ function App() {
 
         <Community />
 
-        <Section id="partners">
-          <SectionPlaceholder
-            title="PARTNER STACK"
-            description="MeTTa, KRNL, Cardano, SingularityNET, and more"
-          />
-        </Section>
+        <Partners />
 
         <Section id="impact">
           <SectionPlaceholder
