@@ -30,7 +30,7 @@ export default function AnimatedBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const isDark = document.documentElement.classList.contains('dark');
+      const isDark = document.documentElement.dataset.theme === 'dark';
       const nodeColor = isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)';
       const lineColorBase = isDark ? '255, 255, 255' : '0, 0, 0';
 

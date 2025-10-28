@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BASIX Market DAO Web3 Foundation</title>
+    <title>BASIX Market DAO</title>
+    <script>
+      (function() {
+        const stored = localStorage.getItem('basix-theme');
+        if (stored) {
+          document.documentElement.dataset.theme = stored;
+        } else {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = prefersDark ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+          localStorage.setItem('basix-theme', theme);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
