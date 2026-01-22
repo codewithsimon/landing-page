@@ -81,7 +81,7 @@ export default function AboutVisual() {
             opacity="0.8"
             style={{ color: 'var(--heading)' }}
           >
-            DAO
+            DAO Like
           </text>
         </g>
 
