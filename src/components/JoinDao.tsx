@@ -99,7 +99,7 @@ export default function JoinDao() {
                 Get in Touch
               </div>
               <a
-                href="mailto:invest@basix.market"
+                href="mailto:investor@basix.market"
                 className="inline-flex items-center gap-3 text-lg transition-colors duration-300 group font-mono"
                 style={{ color: 'var(--heading)' }}
                 onMouseEnter={(e) => {
@@ -110,7 +110,7 @@ export default function JoinDao() {
                 }}
               >
                 <Mail size={20} className="group-hover:scale-110 transition-transform duration-300" />
-                <span>invest@basixmarket.io</span>
+                <span>investor@basix.market</span>
               </a>
             </div>
 
