@@ -39,7 +39,7 @@ export default function Hero() {
           className="text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up"
           style={{ animationDelay: '0.6s', opacity: 0, color: 'var(--muted)' }}
         >
-          The decentralized marketplace for AI, IP, and real-world innovation — powered by DAO governance intelligence.
+          The decentralized marketplace for AI, IP, and real-world innovation — powered by DAO like governance intelligence.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: '0.8s', opacity: 0 }}>
@@ -65,7 +65,7 @@ export default function Hero() {
             <div className="text-sm uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Decentralized</div>
           </div>
           <div className="text-center animate-fade-up" style={{ animationDelay: '1.1s', opacity: 0 }}>
-            <div className="text-3xl font-bold mb-2" style={{ color: 'var(--heading)' }}>DAO</div>
+            <div className="text-3xl font-bold mb-2" style={{ color: 'var(--heading)' }}>DAO Like</div>
             <div className="text-sm uppercase tracking-wider" style={{ color: 'var(--muted)' }}>Governed</div>
           </div>
           <div className="text-center animate-fade-up" style={{ animationDelay: '1.2s', opacity: 0 }}>
