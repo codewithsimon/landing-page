@@ -10,7 +10,7 @@ const modules = [
   },
   {
     icon: Users,
-    title: 'DAO Governance',
+    title: 'DAO Like Governance',
     description: 'Transparent voting, proposals, and decentralized funding.',
   },
   {
