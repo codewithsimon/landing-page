@@ -20,7 +20,7 @@ export default function About() {
           <div className="h-px w-16" style={{ background: 'linear-gradient(to right, var(--heading), transparent)' }} />
 
           <p className="leading-relaxed text-lg font-light" style={{ color: 'var(--text)' }}>
-            BASIX Market DAO empowers Developers, Creators, Investors, and Entrepreneurs (DICE) to co-own, govern, and monetize AI, IP, and innovation. By merging advanced AI, blockchain, and decentralized governance, BASIX builds the infrastructure for borderless, fair, and sustainable digital economies.
+            BASIX Market empowers Developers, Creators, Investors, and Entrepreneurs (DICE) to co-own, govern, and monetize AI, IP, and innovation. By merging advanced AI, blockchain, and decentralized governance, BASIX builds the infrastructure for borderless, fair, and sustainable digital economies.
           </p>
 
           <div className="grid grid-cols-2 gap-6 pt-8">
