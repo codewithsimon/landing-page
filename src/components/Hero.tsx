@@ -39,12 +39,12 @@ export default function Hero() {
           className="text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-up"
           style={{ animationDelay: '0.6s', opacity: 0, color: 'var(--muted)' }}
         >
-          The decentralized marketplace for AI, IP, and real-world innovation — powered by DAO governance.
+          The decentralized marketplace for AI, IP, and real-world innovation — powered by DAO governance intelligence.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: '0.8s', opacity: 0 }}>
           <button className="btn-primary flex items-center gap-2 group">
-            JOIN THE DAO
+            BECOME THE CHANGE
             <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
           </button>
 
