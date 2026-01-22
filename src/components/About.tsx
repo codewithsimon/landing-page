@@ -23,7 +23,7 @@ export default function About() {
             BASIX Market empowers Developers, Creators, Investors, and Entrepreneurs (DICE) to co-own, govern, and monetize AI, IP, and innovation. By merging advanced AI, blockchain, and decentralized governance, BASIX builds the infrastructure for borderless, fair, and sustainable digital economies.
           </p>
 
-          <div className="grid grid-cols-2 gap-6 pt-8">
+          <div className="grid grid-cols-3 gap-4 pt-8">
             <div>
               <div className="text-2xl font-bold mb-1" style={{ color: 'var(--heading)' }}>DICE</div>
               <div className="text-sm uppercase tracking-wide" style={{ color: 'var(--muted)' }}>Community Model</div>
@@ -31,6 +31,10 @@ export default function About() {
             <div>
               <div className="text-2xl font-bold mb-1" style={{ color: 'var(--heading)' }}>WEB3</div>
               <div className="text-sm uppercase tracking-wide" style={{ color: 'var(--muted)' }}>Native Platform</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold mb-1" style={{ color: 'var(--heading)' }}>API</div>
+              <div className="text-sm uppercase tracking-wide" style={{ color: 'var(--muted)' }}>Economy</div>
             </div>
           </div>
         </div>
