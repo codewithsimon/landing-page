@@ -95,7 +95,9 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://github.com/BASIXmarket-io"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors"
                 style={{ color: 'var(--muted)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--heading)'; }}
