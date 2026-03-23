@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
@@ -12,6 +13,7 @@ const navItems = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <nav
@@ -25,7 +27,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center">
             <img
-              src="/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-preview.png"
+              src={theme === 'light' ? "/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-preview.png" : "/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-white-preview.png"}
               alt="BASIX"
               className="h-12 w-auto"
             />

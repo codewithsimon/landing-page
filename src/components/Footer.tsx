@@ -1,6 +1,8 @@
 import { Github, Twitter, MessageCircle } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
+  const { theme } = useTheme();
 
   return (
     <footer
@@ -14,7 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <img
-              src="/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-preview.png"
+              src={theme === 'light' ? "/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-preview.png" : "/whatsapp_image_2026-01-22_at_3.34.43_pm-removebg-white-preview.png"}
               alt="BASIX"
               className="h-12 w-auto mb-4"
             />
@@ -95,7 +97,9 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://github.com/BASIXmarket-io"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors"
                 style={{ color: 'var(--muted)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--heading)'; }}
